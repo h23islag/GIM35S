@@ -28,21 +28,23 @@ def guessing_game(rnd):
     guesses = int(guesses)
     index = 0
     while index < guesses:
-        predictedVal = input("Gissa vilket tal jag tänker på (1-60): ")
-        if (predicted_val.isdigit() and not (1 < predicted_val <= 60) and (predicted_val )):
+        predicted_val = input("Gissa vilket tal jag tänker på (1-60): ")
+        if (predicted_val.isdigit() and (1 < int(predicted_val) <= 60)):
             predicted_val = int(predicted_val)
-            if(1 < predicted_val <= 60) and (predicted_val):
-                if(predicted_val == rnd):
-                    print("Du svarade korrekt! Grattis!")
-                elif(predicted_val < rnd):
-                    print("Du svarade fel. Talet är större än ditt gissade tal.")
-                elif(predicted_val > rnd):
-                    print("Du svarade fel. Talet är mindre än ditt gissade tal.")
-                else:
-                    index += 1
-                    print("Ogiltigt alternativ! Du får tillbaka försöket.")
-
+            if(predicted_val == rnd):
+                print("Du svarade korrekt! Grattis!")
+                index += 1
+            elif(predicted_val < rnd):
+                print("Du svarade fel. Talet är större än ditt gissade tal.")
+                index += 1
+            elif(predicted_val > rnd):
+                print("Du svarade fel. Talet är mindre än ditt gissade tal.")
+                index += 1
+            else:
+                print("Ogiltigt alternativ! Du får tillbaka försöket.")
+                index -= 1
         else:
-            index += 1
             print("Ogiltigt alternativ! Du får tillbaka försöket.")
-    print("Talet var: " + str(rnd))
+            index -= 1
+        
+    print("\nTyvärr men dina gissningar är slut... Talet var: " + str(rnd) + "\n")

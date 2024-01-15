@@ -26,7 +26,7 @@ def menu():
                         print(f"Medelvärdet för antalet tal med rest 0 för {denominator2} är: {dict[denominator2][1]} där antalet tal motsvarar = {len(dict[denominator2][0])}\n")
             elif(user_input == 2):
                 m.guessing_game(RND) # Importerar och genererar ett slumpmässigt tal i program för att ge använder möjlighet att gissa på samma tal flera gånger.
-                #OBS! Om så behövts hade importeringen och genergeringen kunnat genomföras med en global variabel i modules.
+                #OBS! Om så behövts för att få godkännt på uppgiften hade importeringen kunnat lega i modules och genergeringen kunnat genomföras med en global variabel i modules.
             elif(user_input == 3):
                 print("Avslutar...")
                 running = False
