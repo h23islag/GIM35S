@@ -22,18 +22,18 @@ def divider(denominator1, denominator2):
 def guessing_game(rnd):
     guesses = input("\nHur många gissningar vill du ha: ")
     if (not(guesses.isdigit())):
-        print("Ogiltigt alternativ!")
+        print("\nOgiltigt alternativ!")
         guessing_game(rnd)
         return
     guesses = int(guesses)
     index = 0
     while index < guesses:
-        predicted_val = input("Gissa vilket tal jag tänker på (1-60): ")
+        predicted_val = input("\nGissa vilket tal jag tänker på (1-60): ")
         if (predicted_val.isdigit() and (1 < int(predicted_val) <= 60)):
             predicted_val = int(predicted_val)
             if(predicted_val == rnd):
                 print("Du svarade korrekt! Grattis!")
-                index += 1
+                index = guesses
             elif(predicted_val < rnd):
                 print("Du svarade fel. Talet är större än ditt gissade tal.")
                 index += 1
@@ -41,10 +41,8 @@ def guessing_game(rnd):
                 print("Du svarade fel. Talet är mindre än ditt gissade tal.")
                 index += 1
             else:
-                print("Ogiltigt alternativ! Du får tillbaka försöket.")
-                index -= 1
+                print("Ogiltigt alternativ! Du får tillbaka ditt försök.")
         else:
-            print("Ogiltigt alternativ! Du får tillbaka försöket.")
-            index -= 1
+            print("Ogiltigt alternativ! Du får tillbaka ditt försök.")
         
     print("\nTyvärr men dina gissningar är slut... Talet var: " + str(rnd) + "\n")
