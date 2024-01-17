@@ -14,7 +14,6 @@ def divider(denominator1, denominator2):
     print(f"\nNedan följer alla delbara tal med {denominator2} i intervallet 1 til 1600: ")
     print(numerators2) # Hade alternativt kunna loopa igenom värdena för snyggare utskrift
     dict = {}
-    print(denominator1)
     dict[denominator1] = (numerators1, sum(numerators1)/len(numerators1))
     dict[denominator2] = (numerators2, sum(numerators2)/len(numerators2))
     return dict
@@ -26,23 +25,22 @@ def guessing_game(rnd):
         guessing_game(rnd)
         return
     guesses = int(guesses)
-    index = 0
-    while index < guesses:
+    while 0 < guesses:
         predicted_val = input("\nGissa vilket tal jag tänker på (1-60): ")
-        if (predicted_val.isdigit() and (1 < int(predicted_val) <= 60)):
+        if (predicted_val.isdigit() and (1 <= int(predicted_val) <= 60)):
             predicted_val = int(predicted_val)
             if(predicted_val == rnd):
                 print("Du svarade korrekt! Grattis!")
-                index = guesses
+                guesses = 0
             elif(predicted_val < rnd):
                 print("Du svarade fel. Talet är större än ditt gissade tal.")
-                index += 1
+                guesses -= 1
+                print(f"Du har {guesses} antal försök kvar!")
             elif(predicted_val > rnd):
                 print("Du svarade fel. Talet är mindre än ditt gissade tal.")
-                index += 1
-            else:
-                print("Ogiltigt alternativ! Du får tillbaka ditt försök.")
+                guesses -= 1
+                print(f"Du har {guesses} antal försök kvar!")
         else:
             print("Ogiltigt alternativ! Du får tillbaka ditt försök.")
-        
-    print("\nTyvärr men dina gissningar är slut... Talet var: " + str(rnd) + "\n")
+    if(predicted_val != rnd):
+        print("\nTyvärr men dina gissningar är slut... Talet var: " + str(rnd) + "\n")
