@@ -1,10 +1,9 @@
 from random import randint
 
 def divider(denominator1, denominator2):
-    size = 1600
     numerators1 = []
     numerators2 = []
-    for i in range(1, size):
+    for i in range(1, 1601):
         if(i%denominator1 == 0):
             numerators1.append(i)
         elif(i%denominator2 == 0):
