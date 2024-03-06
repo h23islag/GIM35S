@@ -6,7 +6,7 @@ def divider(denominator1, denominator2):
     for i in range(1, 1601):
         if(i%denominator1 == 0):
             numerators1.append(i)
-        elif(i%denominator2 == 0):
+        if(i%denominator2 == 0):
             numerators2.append(i)
     print(f"\nNedan följer alla delbara tal med {denominator1} i intervallet 1 til 1600: ")
     print(numerators1) # Hade alternativt kunna loopa igenom värdena för snyggare utskrift
