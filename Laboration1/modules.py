@@ -1,20 +1,16 @@
 from random import randint
 
 def divider(denominator1, denominator2):
-    numerators1 = []
-    numerators2 = []
+    numerators = []
     for i in range(1, 1601):
-        if(i%denominator1 == 0):
-            numerators1.append(i)
-        if(i%denominator2 == 0):
-            numerators2.append(i)
-    print(f"\nNedan följer alla delbara tal med {denominator1} i intervallet 1 til 1600: ")
-    print(numerators1) # Hade alternativt kunna loopa igenom värdena för snyggare utskrift
-    print(f"\nNedan följer alla delbara tal med {denominator2} i intervallet 1 til 1600: ")
-    print(numerators2) # Hade alternativt kunna loopa igenom värdena för snyggare utskrift
+        if(i%denominator1 == 0 and i%denominator2 == 0):
+            numerators.append(i)
+    print(f"\nNedan följer alla delbara tal med {denominator1} och {denominator2} i intervallet 1 til 1600: ")
+    print(numerators) # Hade alternativt kunna loopa igenom värdena för snyggare utskrift
+    print()
     dict = {}
-    dict[denominator1] = (numerators1, sum(numerators1)/len(numerators1))
-    dict[denominator2] = (numerators2, sum(numerators2)/len(numerators2))
+    dict[denominator1] = (numerators, sum(numerators)/len(numerators))
+    dict[denominator2] = (numerators, sum(numerators)/len(numerators))
     return dict
 
 def guessing_game(rnd):

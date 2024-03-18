@@ -18,8 +18,7 @@ def menu():
                     denominator2 = int(denominator2)
                     print(f"Nämnarna {denominator1} och {denominator2} angavs!\n")
                     dict = m.divider(denominator1, denominator2)
-                    print(f"\nMedelvärdet för antalet tal med rest 0 för {denominator1} är: {dict[denominator1][1]} där antalet tal motsvarar = {len(dict[denominator1][0])}")
-                    print(f"Medelvärdet för antalet tal med rest 0 för {denominator2} är: {dict[denominator2][1]} där antalet tal motsvarar = {len(dict[denominator2][0])}\n")
+                    print(f"\nMedelvärdet för antalet tal med rest 0 för {denominator1} och {denominator2} är: {dict[denominator1][1]} där antalet tal motsvarar = {len(dict[denominator1][0])}")
                 else:
                     print("Ogiltig nämnare! Var god försök igen")
             else:
